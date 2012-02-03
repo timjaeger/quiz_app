@@ -20,6 +20,7 @@ end
 
 # Gems for production and development
 gem 'sqlite3', :group => [:development, :test]
+gem 'rspec-rails', '>= 2.0.0.beta', :group => [:development, :test]
 gem 'pg', :group => [:production]
 
 gem 'jquery-rails'
