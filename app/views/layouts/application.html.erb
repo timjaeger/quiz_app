@@ -2,24 +2,13 @@
 <html>
 <head>
   <title>Sales Quiz and Leaderboard | <%= @title %></title>
-  <%= stylesheet_link_tag 'bootstrap-responsive', :media => 'all' %> 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= render 'layouts/stylesheets' %>	
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "bootstrap" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<ul class="nav">
-				<li class=""><%= link_to 'Home', new_user_path %></li>
-				<li class=""><%= link_to 'Take the Quiz', questions_path %></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<div>
+<%= render 'layouts/header' %>
 <div class="container" style="padding-top:50px;">	
 	<%= yield %>
 </div>
