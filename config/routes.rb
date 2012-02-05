@@ -1,7 +1,11 @@
 DemoApp::Application.routes.draw do
+  resources :points
+
   get "pages/home"
 
   get "pages/contact"
+  
+  get "pages/about"
 
   resources :questions
 

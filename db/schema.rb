@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120203171621) do
+ActiveRecord::Schema.define(:version => 20120204183819) do
 
   create_table "admins", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "points", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.integer  "correct_answer"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "questions", :force => true do |t|
@@ -27,15 +35,17 @@ ActiveRecord::Schema.define(:version => 20120203171621) do
     t.string   "answer3"
     t.string   "answer4"
     t.integer  "admin_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "correct_answer"
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "total_points"
   end
 
 end

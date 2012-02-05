@@ -23,6 +23,10 @@ gem 'sqlite3', :group => [:development, :test]
 gem 'rspec-rails', '>= 2.0.0.beta', :group => [:development, :test]
 gem 'pg', :group => [:production]
 
+group :test do 
+    gem 'webrat', '0.7.1'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
