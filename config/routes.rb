@@ -11,8 +11,6 @@ DemoApp::Application.routes.draw do
 
   resources :questions
 
-  resources :admins
-
   resources :users
   
   root :to => 'users#new'
