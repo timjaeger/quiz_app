@@ -1,0 +1,13 @@
+/*!
+ * Sales Quiz Leaderboard v0.0.1
+ *
+ * (c) 2012 Local Wisdom, Inc.
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed by @timj
+ */
+
+/* Bootstrap form overrides */
+.field label { float:left; width:auto; }
+
