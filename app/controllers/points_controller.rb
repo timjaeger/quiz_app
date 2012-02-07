@@ -44,7 +44,17 @@ class PointsController < ApplicationController
     @point = Point.new(params[:point])
     logger.debug "params is #{params}"
     
-    respond_to do |format|  
+    respond_to do |format|
+      logger.debug "format is #{format}"
+      if @point.save
+        logger.debug "We are in save"
+        
+      else
+      end
+    end
+    
+    #render :nothing => true
+  
     end  
     
     #@point.save
@@ -58,7 +68,6 @@ class PointsController < ApplicationController
       #  format.json { render json: @point.errors, status: :unprocessable_entity }
     #  end
     # end
-  end
 
   # PUT /points/1
   # PUT /points/1.json
@@ -87,10 +96,4 @@ class PointsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  def compare
-    logger.debug "We are in compare"
-    #@question = Question.find(params[:id])
-  end
-  
 end

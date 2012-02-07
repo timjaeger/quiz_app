@@ -1,11 +1,17 @@
 <% if current_user.user_type == 0 %>
 	
 	<h1>Take the Quiz</h1>
+	
+	<% if flash[:notice] %>
+	    <div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+	
 	<p>This quiz is designed to test your knowledge of <strong>Invega Products</strong>. You will only have once chance to guess the correct answer before moving onto the next one. You cannot skip a question.</p>
 	
 	<% @questions.each do |question| %>
 			<div class="well" id="question_<%=question.id %>">
 				<h2><%= question.question %></h2>
+				<form accept-charset="UTF-8" action="/points/create" method="post" data-remote="true">
 					<div class="field">
 						<%= radio_button("point", :user_answer, 1) %>
 						<%= label_tag(:correct_answer, question.answer1 ) %>
@@ -17,8 +23,12 @@
 						<%= label_tag(:correct_answer, question.answer4) %>
 					  </div>
 					<div class="actions">
+						<input type="hidden" id="point_question_correct_answer" name="point[correct_answer]" value="<%= question.correct_answer %>" />
+						<input type="hidden" id="point_question_id" name="point[question_id]" value="<%= question.id %>" />
+						<input type="hidden" id="point_current_user" name="point[user_id]" value="<%= current_user.id %>" />
 					    <%= submit_tag "Submit", :class => 'btn btn-primary' %>
 					</div>
+				</form>
 			</div>
 	<% end %>
 		<div class="well">

@@ -20,13 +20,15 @@ $(document).ready(function() {
     //hides all but the first question
 	$('div.well').not(':first').hide();
 
+
 	$('input.btn').each(function(){
 		$(this).click(function(){
 			// hide the current div
-			var currentDiv = $(this).parent().parent();
+			var currentDiv = $(this).parent().parent().parent();
 			currentDiv.hide();
 			// show the next question if it exists
 			currentDiv.next().show();
 		});
 	});
+	
 });
