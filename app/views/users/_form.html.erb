@@ -11,28 +11,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password %>
     <%= f.text_field :password %>
   </div>
   <div class="field"> 
-	 <%= f.label :password_confirmation, "Confirmation" %><br /> 
+	 <%= f.label :password_confirmation, "Confirmation" %>
 	 <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
-	<%= label_tag(:user_type, "Sales") %>
 	<%= radio_button("user", :user_type, 0) %>
-	<%= label_tag(:age_child, "Admin") %>
+	<%= label_tag(:user_type, "Sales") %>
 	<%= radio_button("user", :user_type, 1) %>
+	<%= label_tag(:age_child, "Admin") %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Sign Up", :class => 'btn-primary' %>
   </div>
 <% end %>
