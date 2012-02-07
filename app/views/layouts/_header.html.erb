@@ -3,7 +3,12 @@
 		<div class="container">
 			<ul class="nav">
 				<li class=""><%= link_to 'Home', new_user_path %></li>
-				<li class=""><%= link_to 'Take the Quiz', questions_path %></li>
+					<% if signed_in? %> 
+						<li class=""><%= link_to 'Take the Quiz', questions_path %></li>
+						<li><%= link_to "Sign out", signout_path, :method => :delete %></li> 
+					<% else %>
+						 <li><%= link_to "Sign in", signin_path %></li> 
+					<% end %>
 			</ul>
 		</div>
 	</div>

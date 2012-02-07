@@ -1,6 +1,11 @@
 DemoApp::Application.routes.draw do
-  resources :points
+  get "sessions/new"
 
+  resources :points
+  resources :questions
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+  
   get "users/new"
 
   get "pages/home"
@@ -9,9 +14,9 @@ DemoApp::Application.routes.draw do
   
   get "pages/about"
 
-  resources :questions
-
-  resources :users
+  match '/signup', :to => 'users#new' 
+  match '/signin', :to => 'sessions#new' 
+  match '/signout', :to => 'sessions#destroy'
   
   root :to => 'users#new'
 

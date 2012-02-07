@@ -22,6 +22,10 @@
     <%= f.label :password %><br />
     <%= f.text_field :password %>
   </div>
+  <div class="field"> 
+	 <%= f.label :password_confirmation, "Confirmation" %><br /> 
+	 <%= f.password_field :password_confirmation %>
+  </div>
   <div class="field">
 	<%= label_tag(:user_type, "Sales") %>
 	<%= radio_button("user", :user_type, 0) %>
