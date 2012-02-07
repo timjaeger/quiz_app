@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
+    logger.debug "The object is #{current_user}"
     @user = User.new
 
     respond_to do |format|
@@ -40,6 +41,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    logger.debug "Params: #{params[:user]}"
     @user = User.new(params[:user])
 
       if @user.save

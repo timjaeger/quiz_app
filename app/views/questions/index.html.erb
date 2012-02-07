@@ -1,35 +1,63 @@
-<h1>Listing questions</h1>
+<% if current_user.user_type == 0 %>
+	
+	<h1>Take the Quiz</h1>
+	<p>This quiz is designed to test your knowledge of <strong>Invega Products</strong>. You will only have once chance to guess the correct answer before moving onto the next one. You cannot skip a question.</p>
+	
+	<% @questions.each do |question| %>
+			<div class="well" id="question_<%=question.id %>">
+				<h2><%= question.question %></h2>
+					<div class="field">
+						<%= radio_button("point", :user_answer, 1) %>
+						<%= label_tag(:correct_answer, question.answer1 ) %>
+						<%= radio_button("point", :user_answer, 2) %>
+						<%= label_tag(:correct_answer, question.answer2) %>
+						<%= radio_button("point", :user_answer, 3) %>
+						<%= label_tag(:correct_answer, question.answer3) %>
+						<%= radio_button("point", :user_answer, 4) %>
+						<%= label_tag(:correct_answer, question.answer4) %>
+					  </div>
+					<div class="actions">
+					    <%= submit_tag "Submit", :class => 'btn btn-primary' %>
+					</div>
+			</div>
+	<% end %>
+		<div class="well">
+			<h3>Thanks for answering all of the questions! View your score on your <a href="#">profile page</a>.</h3>
+		</div>
+	
+<% else %>
 
-<table class="table table-condensed">
-  <tr>
-    <th>Question</th>
-    <th>Answer1</th>
-    <th>Answer2</th>
-    <th>Answer3</th>
-    <th>Answer4</th>
-    <th>Correct Answer</th>
-    <th>Admin</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	<h1>Sales Quiz</h1>
+	<table class="table table-condensed">
+	  <tr>
+	    <th>Question</th>
+	    <th>Answer1</th>
+	    <th>Answer2</th>
+	    <th>Answer3</th>
+	    <th>Answer4</th>
+	    <th>Correct Answer</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
 
-<% @questions.each do |question| %>
-  <tr>
-    <td><%= question.question %></td>
-    <td><%= question.answer1 %></td>
-    <td><%= question.answer2 %></td>
-    <td><%= question.answer3 %></td>
-    <td><%= question.answer4 %></td>
-	<td><%= question.correct_answer %></td>
-    <td><%= question.admin_id %></td>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+	<% @questions.each do |question| %>
+	  <tr>
+	    <td><%= question.question %></td>
+	    <td><%= question.answer1 %></td>
+	    <td><%= question.answer2 %></td>
+	    <td><%= question.answer3 %></td>
+	    <td><%= question.answer4 %></td>
+		<td><%= question.correct_answer %></td>
+	    <td><%= link_to 'Show', question, :class => 'btn btn-primary' %></td>
+	    <td><%= link_to 'Edit', edit_question_path(question), :class => 'btn btn-warning' %></td>
+	    <td><%= link_to 'Destroy', question, :class => 'btn btn-danger', confirm: 'Are you sure?', method: :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+	
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Question', new_question_path %>
+<% if current_user.user_type == 1 %>
+	<%= link_to 'New Question', new_question_path %>
+<% end %>

@@ -8,6 +8,18 @@
  * Designed by @timj
  */
 
+/* Text overrides */
+body { font-family:"Helvetic Neue",Helvetica, Arial, Verdana, sans-serif; }
+h1 { margin-bottom:20px; }
+
 /* Bootstrap form overrides */
-.field label { float:left; width:auto; }
+.field input[type="radio"] { float:left; margin:0px 10px; }
+.field input.first-radio { margin-left:0px; }
+.field label.radio-label { float:left; width:auto; }
+div.actions { clear:both; }
+
+td a.btn { color:#fff; }
+
+/* Bootstrap button overrides */
+
 

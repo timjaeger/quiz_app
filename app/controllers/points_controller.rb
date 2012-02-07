@@ -40,17 +40,24 @@ class PointsController < ApplicationController
   # POST /points
   # POST /points.json
   def create
+    logger.debug "We are in create"
     @point = Point.new(params[:point])
+    logger.debug "params is #{params}"
+    
+    respond_to do |format|  
+    end  
+    
+    #@point.save
 
-    respond_to do |format|
-      if @point.save
-        format.html { redirect_to @point, notice: 'Point was successfully created.' }
-        format.json { render json: @point, status: :created, location: @point }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @point.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+     # if @point.save
+      #  format.html { redirect_to @point, notice: 'Point was successfully created.' }
+       # format.json { render json: @point, status: :created, location: @point }
+    #  else
+     #   format.html { render action: "new" }
+      #  format.json { render json: @point.errors, status: :unprocessable_entity }
+    #  end
+    # end
   end
 
   # PUT /points/1
@@ -80,4 +87,10 @@ class PointsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def compare
+    logger.debug "We are in compare"
+    #@question = Question.find(params[:id])
+  end
+  
 end
