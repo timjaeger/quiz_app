@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
                     :format => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
     
-  has_many :points
+  has_many :points, :through => :questions
   
   before_save :encrypt_password
   

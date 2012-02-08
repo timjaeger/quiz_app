@@ -3,6 +3,8 @@ class PointsController < ApplicationController
   # GET /points.json
   def index
     @points = Point.all
+    @user_points = Point.where('user_id' => current_user)
+    @questions = Question.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,22 +42,20 @@ class PointsController < ApplicationController
   # POST /points
   # POST /points.json
   def create
-    logger.debug "We are in create"
     @point = Point.new(params[:point])
-    logger.debug "params is #{params}"
     
     respond_to do |format|
-      logger.debug "format is #{format}"
       if @point.save
-        logger.debug "We are in save"
-        
+        logger.debug "Data has been saved"
+        flash.now[:success] = "Data has been saved"
+        redirect_to :controller => 'questions', :action => 'index'
       else
       end
     end
-    
+  end   
     #render :nothing => true
   
-    end  
+     
     
     #@point.save
 

@@ -19,16 +19,25 @@
 $(document).ready(function() {
     //hides all but the first question
 	$('div.well').not(':first').hide();
-
-
-	$('input.btn').each(function(){
-		$(this).click(function(){
-			// hide the current div
+	
+	$('input.question-submission').each(function(){
+		
+		$(this).click(function(){	
+						
 			var currentDiv = $(this).parent().parent().parent();
-			currentDiv.hide();
-			// show the next question if it exists
-			currentDiv.next().show();
+			
+			if($(this).parent().parent().find('input').is(':checked')) {
+			    // hide the current div
+				currentDiv.hide();
+				// show the next question if it exists
+				currentDiv.next().show();
+				return;
+			} else {
+				currentDiv.children(":first").show();
+				return;
+			}
 		});
 	});
+	
 	
 });

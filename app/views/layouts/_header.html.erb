@@ -2,12 +2,19 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<ul class="nav">
-				<li class=""><%= link_to 'Home', new_user_path %></li>
+				<li class="">
+					<% if signed_in? %>
+						<%= link_to 'Dashboard', dashboard_path %>
+					<% else %>
+						<%= link_to 'Sign Up', new_user_path %>
+					<% end %>
+				</li>
 					<% if signed_in? %> 
 						<% if current_user.user_type == 0 %>
 							<li class=""><%= link_to 'Take the Quiz', questions_path %></li>
 						<% else %>
 							<li class=""><%= link_to 'Create a Quiz', new_question_path %></li>
+							<li class=""><%= link_to 'Edit', question_path %></li>
 						<% end %>
 						<li><%= link_to "Sign out", signout_path, :method => :delete %></li> 
 					<% else %>
