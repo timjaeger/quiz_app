@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     else
       @title = "You made it!"
       sign_in user
-      redirect_to user
+      redirect_to dashboard_path
     end
   end
   

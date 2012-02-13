@@ -18,6 +18,7 @@ DemoApp::Application.routes.draw do
   match '/signin', :to => 'sessions#new' 
   match '/signout', :to => 'sessions#destroy'
   match '/dashboard', :to=>'dashboard#index'
+  match '/charts', :to=>'charts#index'
   
   match 'points/create', :to=> 'points#create'
   

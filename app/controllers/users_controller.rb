@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    logger.debug "index"
     @users = User.all
 
     respond_to do |format|
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    logger.debug "show"
     @user = User.find(params[:id])
 
     respond_to do |format|
@@ -24,7 +26,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    logger.debug "The object is #{current_user}"
+    logger.debug "new"
     @user = User.new
 
     respond_to do |format|

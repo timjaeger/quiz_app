@@ -48,6 +48,10 @@ class PointsController < ApplicationController
       if @point.save
         logger.debug "Data has been saved"
         flash.now[:success] = "Data has been saved"
+        if @point.user_answer == @point.correct_answer
+          logger.debug "Correct!"
+        end
+        
         redirect_to :controller => 'questions', :action => 'index'
       else
       end

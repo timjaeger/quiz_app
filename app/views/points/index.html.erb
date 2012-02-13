@@ -2,15 +2,13 @@
 
 <p>Below is how you performed on each question</p>
 
-
 <% @user_points.each do |user_point| %>
 	<div class="<% if user_point.correct_answer == user_point.user_answer %>alert-success alert<% else %>alert alert-danger<% end %>">
-		<h2>Question <%= user_point.question.question %></h2>
-		<%= user_point.correct_answer %>		
+		<h2><%= user_point.question %></h2>
 		<% if user_point.correct_answer == user_point.user_answer %>
 			<p>Your answer is correct</p>
 		<% else %>
-			<p>Your answer is incorrect: <%= users_answer(user_point.question.id).answer2 %></p>
+			<p>Your answer is incorrect</p>
 		<% end %>
 	</div>
 <% end %>

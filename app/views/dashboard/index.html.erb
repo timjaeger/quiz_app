@@ -1,1 +1,45 @@
 <h1>Dashboard</h1>
+<video controls="" autoplay="" style="margin: auto;" name="media" src="http://prod.fieldvision.edgesuite.net/2011/1202-KevinsCorner.mp4?source=cecns"></video>
+
+<div class="row show-grid">
+	<div class="span6">
+		<h3>Quiz</h3>
+		<div class="well">
+			<h2>Question name</h2>
+			<form accept-charset="UTF-8" action="" method="post"> 
+				<div class="field">
+					<%= radio_button("point", :user_answer, 1) %>
+					<%= label_tag(:correct_answer, "question.answer1" ) %>
+					<%= radio_button("point", :user_answer, 2) %>
+					<%= label_tag(:correct_answer, "question.answer2") %>
+					<%= radio_button("point", :user_answer, 3) %>
+					<%= label_tag(:correct_answer, "question.answer3") %>
+					<%= radio_button("point", :user_answer, 4) %>
+					<%= label_tag(:correct_answer, "question.answer4") %>
+				  </div>
+				<div class="actions">
+				   <%= submit_tag "Submit", :class => 'btn btn-primary question-submission' %> 
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="span6">
+		<h3>Leaderboard</h3>
+		<table class="table">
+			<thead>
+		      <tr>
+		        <th>Rank</th>
+		        <th>Name</th>
+		      </tr>
+		    </thead>
+			<tbody>
+		<% @users.each_with_index do |user, index| %>
+			<tr <% if current_user.id == user.user_id %>class="alert alert-info"<% end %>>
+				<td><%= index+1 %></td>
+				<td><%= get_username(user.user_id).name %><% if current_user.id == user.user_id %> (You)<% end %></td>
+			</tr>
+		<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

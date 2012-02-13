@@ -9,8 +9,19 @@
  */
 
 /* Text overrides */
-body { font-family:"Helvetic Neue",Helvetica, Arial, Verdana, sans-serif; }
+body { font-family:"Helvetica Neue",Helvetica, Arial, Verdana, sans-serif; background: url('http://www.invega.com/sites/all/themes/invega-theme/images/bg-invega-content.gif') repeat-x; }
 h1 { margin-bottom:20px; }
+body .container { background-color:#fff; padding:0px 10px; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+
+p, ol, ul, td { font-family:"helvetica neue", helvetica; }
+
+.row table td { vertical-align:middle; }
+
+.navbar .nav > li > a { color:#f87d1d; }
+.navbar .nav > li > a { text-shadow:none; }
+.navbar .nav > li > a:hover { color:#a44e09; }
+
+.navbar div div.container { background-color:#efefef; }
 
 /* Bootstrap form overrides */
 .field input[type="radio"] { float:left; margin:0px 10px; }
@@ -19,6 +30,21 @@ h1 { margin-bottom:20px; }
 div.actions { clear:both; }
 
 td a.btn { color:#fff; }
+
+.btn:first-child { color:#fff; }
+
+div .btn-primary { background-image: -moz-linear-gradient(center top , #ed831e, #e46c0d); 
+	border: 1px solid #663006; 
+	background-image: -moz-linear-gradient(top, #ed831e, #e46c0d);
+	  background-image: -ms-linear-gradient(top, #ed831e, #e46c0d);
+	  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ed831e), to(#e46c0d));
+	  background-image: -webkit-linear-gradient(top, #ed831e, #e46c0d);
+	  background-image: -o-linear-gradient(top, #ed831e, #e46c0d);
+	  background-image: linear-gradient(top, #ed831e, #e46c0d);
+	  background-repeat: repeat-x;
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
+	}
+.btn-primary:hover { background-color:#cb600c; }
 
 /* Bootstrap button overrides */
 

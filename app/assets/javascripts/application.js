@@ -20,6 +20,17 @@ $(document).ready(function() {
     //hides all but the first question
 	$('div.well').not(':first').hide();
 	
+	//Detect which radio button I've selected
+	$("input:radio").click(function() { 
+		if($(this).attr("value") == $(this).parent().next().children(":first").attr("value"))
+		{
+			$(this).parent().next().find("#point_correct").val('yes');
+		} else {
+			$(this).parent().next().find("#point_correct").val('');
+		}
+	});
+	
+	
 	$('input.question-submission').each(function(){
 		
 		$(this).click(function(){	

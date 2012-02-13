@@ -1,5 +1,5 @@
 <div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
+	<div>
 		<div class="container">
 			<ul class="nav">
 				<li class="">
@@ -12,10 +12,12 @@
 					<% if signed_in? %> 
 						<% if current_user.user_type == 0 %>
 							<li class=""><%= link_to 'Take the Quiz', questions_path %></li>
+							<li class=""><%= link_to 'My Score', points_path %></li>
 						<% else %>
 							<li class=""><%= link_to 'Create a Quiz', new_question_path %></li>
-							<li class=""><%= link_to 'Edit', question_path %></li>
+							<li class=""><%= link_to 'My Questions', questions_path %></li>
 						<% end %>
+						<li class=""><%= link_to 'User Statistics', charts_path %></li>
 						<li><%= link_to "Sign out", signout_path, :method => :delete %></li> 
 					<% else %>
 						 <li><%= link_to "Sign in", signin_path %></li> 

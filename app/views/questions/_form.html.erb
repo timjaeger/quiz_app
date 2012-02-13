@@ -32,6 +32,7 @@
     <%= f.text_field :answer4 %>
   </div>
  <div class="field">
+	<%= f.label :CorrectAnswer %>
 	<%= radio_button("question", :correct_answer, 1, :class => 'first-radio') %>
 	<%= label_tag(:correct_answer, "1", :class => 'radio-label') %>
 	<%= radio_button("question", :correct_answer, 2) %>

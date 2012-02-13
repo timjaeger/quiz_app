@@ -1,6 +1,7 @@
 <div class="row">
 	<div class="span4">
 		<%= form_for(@user, :html => { :class => 'well' }) do |f| %>
+		<h1>Sign Up</h1>
 		  <% if @user.errors.any? %>
 		    <div id="error_explanation">
 		      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -38,6 +39,10 @@
 		  </div>
 		</div>	
 	<div class="span8">
+		<h3>Invega Product Leaderboard is designed to measure and improve your salesteam's knowledge of Invega Products.</h3>
+		<br />
+		<p>Signing Up as an <strong>Administrator</strong> allows you to administer quizzes, create questions, and create achievement badges.</p>
+		<p>Signing Up as a <strong>Salesperson</strong> allows you to take quizzes and gauge your knowledge of the medications you are selling to physicians.</p>
 	</div>
 </div>
 <% end %>
