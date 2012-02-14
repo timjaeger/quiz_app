@@ -4,11 +4,11 @@
 
 <% @user_points.each do |user_point| %>
 	<div class="<% if user_point.correct_answer == user_point.user_answer %>alert-success alert<% else %>alert alert-danger<% end %>">
-		<h2><%= user_point.question %></h2>
+		<h2><% if (!user_point.question.nil?) %> <%= user_point.question.question %><% end %></h2>
 		<% if user_point.correct_answer == user_point.user_answer %>
 			<p>Your answer is correct</p>
 		<% else %>
-			<p>Your answer is incorrect</p>
+			<p>Your answer is correct</p>
 		<% end %>
 	</div>
 <% end %>

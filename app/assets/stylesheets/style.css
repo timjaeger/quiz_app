@@ -13,6 +13,8 @@ body { font-family:"Helvetica Neue",Helvetica, Arial, Verdana, sans-serif; backg
 h1 { margin-bottom:20px; }
 body .container { background-color:#fff; padding:0px 10px; border-left:1px solid #ccc; border-right:1px solid #ccc;}
 
+form { margin:0px 0px 0px 0px; }
+
 p, ol, ul, td { font-family:"helvetica neue", helvetica; }
 
 .row table td { vertical-align:middle; }
@@ -32,6 +34,8 @@ div.actions { clear:both; }
 td a.btn { color:#fff; }
 
 .btn:first-child { color:#fff; }
+
+/* .alert { background-color:#ed831e; color:#fff;} */
 
 div .btn-primary { background-image: -moz-linear-gradient(center top , #ed831e, #e46c0d); 
 	border: 1px solid #663006; 
