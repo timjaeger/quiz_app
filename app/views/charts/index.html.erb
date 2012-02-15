@@ -1,11 +1,28 @@
 <h1>User Statistics</h1>
-<h3>January 1, 2012 - February 1, 2012</h3><br />
+<h3>January 1, 2012 - <%= Date.today.strftime "%b %d, %Y" %></h3><br />
 <div class="row">
 	<div class="span8">
 		<div class="page-header">
 			<h4>Full Leaderboard</h4>
 		</div>
-		<%= image_tag "leaderboard.png" %>
+		<table class="table table-condensed">
+			<thead>
+		      <tr>
+		        <th>Name</th>
+		        <th>Number Correct</th>
+				<th></th>
+		      </tr>
+		    </thead>
+			<tbody>
+				<% @users.each do |user| %>
+					<tr>
+						<td><%= get_username(user.user_id).name %></td>
+						<td><span class="bar-chart row-<%= user.count %>"><%= user.count %></span></td>
+						<td></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
 	</div>
 	<div class="span4">
 		<div class="page-header">

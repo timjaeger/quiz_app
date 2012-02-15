@@ -34,6 +34,7 @@ div.actions { clear:both; }
 td a.btn { color:#fff; }
 
 .btn:first-child { color:#fff; }
+a.btn { color:#fff; }
 
 /* .alert { background-color:#ed831e; color:#fff;} */
 
@@ -49,6 +50,24 @@ div .btn-primary { background-image: -moz-linear-gradient(center top , #ed831e, 
 	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
 	}
 .btn-primary:hover { background-color:#cb600c; }
+
+.bar-chart { 
+	display: inline-block; height:15px; text-align:right; background-color:#F87D1D; color:#fff; padding:5px; font-weight:bold;
+	border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); 
+}
+
+.row-5 {  width:320px;  }
+.row-4 { width:250px; }
+.row-3 { width:180px; }
+.row-2 { width:130px; }
+.row-1 { width:70px; }
+
+
+
+
 
 /* Bootstrap button overrides */
 

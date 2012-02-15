@@ -1,9 +1,13 @@
 <h1>Dashboard</h1>
-<video controls="" autoplay="" style="margin: auto;" name="media" src="http://prod.fieldvision.edgesuite.net/2011/1202-KevinsCorner.mp4?source=cecns"></video>
-
+<div class="row show-grid">
+	<div class="span12">
+			<h3>Latest Video</h3>
+			<embed width="450" height="300" name="plugin" autoplay="false" src="http://prod.fieldvision.edgesuite.net/2011/1202-KevinsCorner.mp4?source=cecns" type="video/mp4">
+		</div>
+</div>
 <div class="row show-grid">
 	<div class="span6">
-		<h3>Quiz</h3>
+		<h3>Take the Quiz</h3>
 		<div class="well">
 			<h2><%= @question.question %></h2>
 			<form accept-charset="UTF-8" action="/questions" method="get"> 
@@ -24,7 +28,7 @@
 		</div>
 	</div>
 	<div class="span6">
-		<h3>Leaderboard</h3>
+		<h3>Top 5 Salespeople</h3>
 		<table class="table table-condensed">
 			<thead>
 		      <tr>
@@ -34,14 +38,18 @@
 		      </tr>
 		    </thead>
 			<tbody>
-				<% @users.each do |user| %>
+				<% @users.take(5).each do |user| %>
 					<tr>
 						<td><%= get_username(user.user_id).name %></td>
-						<td><%= user.count %></td>
+						<td><span class="bar-chart row-<%= user.count %>"><%= user.count %></span></td>
 						<td></td>
 					</tr>
 				<% end %>
 			</tbody>
 		</table>
+		<%= link_to "View All Salespeople", charts_path, :class => "btn btn-primary" %>
 	</div>
+</div>
+<div class="row">
+	<br />
 </div>
