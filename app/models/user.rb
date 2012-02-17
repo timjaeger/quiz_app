@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
                     :uniqueness => { :case_sensitive => false }
     
   has_many :points, :through => :questions
+  has_many :comments
   
   before_save :encrypt_password
   

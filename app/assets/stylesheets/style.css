@@ -38,7 +38,7 @@ a.btn { color:#fff; }
 
 /* .alert { background-color:#ed831e; color:#fff;} */
 
-div .btn-primary { background-image: -moz-linear-gradient(center top , #ed831e, #e46c0d); 
+div .btn-primary { background-image: -moz-linear-gradient(center top , #ed831e, #d2741b); 
 	border: 1px solid #663006; 
 	background-image: -moz-linear-gradient(top, #ed831e, #e46c0d);
 	  background-image: -ms-linear-gradient(top, #ed831e, #e46c0d);
@@ -52,7 +52,9 @@ div .btn-primary { background-image: -moz-linear-gradient(center top , #ed831e, 
 .btn-primary:hover { background-color:#cb600c; }
 
 .bar-chart { 
-	display: inline-block; height:15px; text-align:right; background-color:#F87D1D; color:#fff; padding:5px; font-weight:bold;
+	display: inline-block; height:15px; text-align:right; 
+	background-image: -moz-linear-gradient(center top , #ed831e, #e46c0d);
+	color:#fff; padding:5px; font-weight:bold;
 	border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);

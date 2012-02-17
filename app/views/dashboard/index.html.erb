@@ -1,31 +1,8 @@
 <h1>Dashboard</h1>
 <div class="row show-grid">
-	<div class="span12">
-			<h3>Latest Video</h3>
-			<embed width="450" height="300" name="plugin" autoplay="false" src="http://prod.fieldvision.edgesuite.net/2011/1202-KevinsCorner.mp4?source=cecns" type="video/mp4">
-		</div>
-</div>
-<div class="row show-grid">
 	<div class="span6">
-		<h3>Take the Quiz</h3>
-		<div class="well">
-			<h2><%= @question.question %></h2>
-			<form accept-charset="UTF-8" action="/questions" method="get"> 
-				<div class="field">
-					<%= radio_button("point", :user_answer, 1) %>
-					<%= label_tag(:correct_answer, @question.answer1 ) %>
-					<%= radio_button("point", :user_answer, 2) %>
-					<%= label_tag(:correct_answer, @question.answer2) %>
-					<%= radio_button("point", :user_answer, 3) %>
-					<%= label_tag(:correct_answer, @question.answer3) %>
-					<%= radio_button("point", :user_answer, 4) %>
-					<%= label_tag(:correct_answer, @question.answer4) %>
-				  </div>
-				<div class="actions">
-				   <%= submit_tag "Submit", :class => 'btn btn-primary question-submission' %> 
-				</div>
-			</form>
-		</div>
+		<h3>Latest Video</h3>
+		<embed width="450" height="300" name="plugin" autoplay="false" src="http://prod.fieldvision.edgesuite.net/2011/1202-KevinsCorner.mp4?source=cecns" type="video/mp4">
 	</div>
 	<div class="span6">
 		<h3>Top 5 Salespeople</h3>
@@ -48,6 +25,45 @@
 			</tbody>
 		</table>
 		<%= link_to "View All Salespeople", charts_path, :class => "btn btn-primary" %>
+	</div>
+</div>
+<div class="row show-grid">
+	<div class="span6">
+		<h3>Comments</h3>
+		<% @comments.each do |comment| %>
+			<p><%= comment.body %></p>
+		<% end %>
+		<%= form_for([@user, @user.comments.build]) do |f| %>
+		  <div class="field">
+		    <%= f.label :body %>
+		    <%= f.text_area :body %>
+		  </div>
+		  <div class="actions">
+			<input type="hidden" id="current_user_id" name="comment[user_id]" value="<%= current_user.id %>" />
+		    <%= f.submit %>
+		  </div>
+		<% end %>
+	</div>
+	<div class="span6">
+		<h3>Take the Quiz</h3>
+		<div class="well">
+			<h2><%= @question.question %></h2>
+			<form accept-charset="UTF-8" action="/questions" method="get"> 
+				<div class="field">
+					<%= radio_button("point", :user_answer, 1) %>
+					<%= label_tag(:correct_answer, @question.answer1 ) %>
+					<%= radio_button("point", :user_answer, 2) %>
+					<%= label_tag(:correct_answer, @question.answer2) %>
+					<%= radio_button("point", :user_answer, 3) %>
+					<%= label_tag(:correct_answer, @question.answer3) %>
+					<%= radio_button("point", :user_answer, 4) %>
+					<%= label_tag(:correct_answer, @question.answer4) %>
+				  </div>
+				<div class="actions">
+				   <%= submit_tag "Submit", :class => 'btn btn-primary question-submission' %> 
+				</div>
+			</form>
+		</div>
 	</div>
 </div>
 <div class="row">

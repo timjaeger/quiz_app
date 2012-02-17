@@ -3,7 +3,9 @@ DemoApp::Application.routes.draw do
 
   resources :points
   resources :questions
-  resources :users
+  resources :users do
+    resources :comments
+  end
   resources :sessions, :only => [:new, :create, :destroy]
   
   get "users/new"
