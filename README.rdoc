@@ -5,4 +5,9 @@ This is an application / prototype where Administrators can write questions for 
 The purpose of this is for Administrators to gauge how well their salesteam understands a product.
 
 
+Features:
+- Administrators can create a multiple-choice (4 questions) quiz
+- Sales professionals can take the quiz
+- Both admins and sales professionals can compare their results in a leaderboard-fashion
+- Basic comments work (on the Dashboard)
 
