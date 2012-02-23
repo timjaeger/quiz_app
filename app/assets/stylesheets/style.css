@@ -67,9 +67,12 @@ div .btn-primary { background-image: -moz-linear-gradient(center top , #ed831e, 
 .row-2 { width:130px; }
 .row-1 { width:70px; }
 
-
-
-
+/* Label Stuff */
+#new_comment .field label { font-weight:bold; }
+#new_comment textarea { width:100%; height:200px; }
+.comment p {  }
+.comment div { clear:both; padding-top:5px; border-bottom:1px solid #efefef; padding-bottom:10px; }
+.comment div.user-name { font-size:10px; color:#999; margin-top:-10px; }
 
 /* Bootstrap button overrides */
 

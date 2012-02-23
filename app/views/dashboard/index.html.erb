@@ -28,19 +28,21 @@
 	</div>
 </div>
 <div class="row show-grid">
-	<div class="span6">
+	<div class="span6 comment">
 		<h3>Comments</h3>
 		<% @comments.each do |comment| %>
-			<p><%= comment.body %></p>
+			<p><%= comment.body %>
+			<div class="user-name">- <%= get_username(comment.user_id).name %></div>
+			</p>
 		<% end %>
 		<%= form_for([@user, @user.comments.build]) do |f| %>
 		  <div class="field">
-		    <%= f.label :body %>
+		    <%= f.label :Write_your_comment_below %>
 		    <%= f.text_area :body %>
 		  </div>
 		  <div class="actions">
 			<input type="hidden" id="current_user_id" name="comment[user_id]" value="<%= current_user.id %>" />
-		    <%= f.submit %>
+		    <%= submit_tag "Submit", :class => 'btn btn-primary' %> 
 		  </div>
 		<% end %>
 	</div>
